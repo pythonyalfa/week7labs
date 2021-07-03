@@ -32,3 +32,44 @@ return false
 
 
 """
+
+
+class Triangle:
+    angleA = 34
+    angleB = 55
+    angleC = 55
+    def __init__(self, angleA, angleB, angleC):
+        self.angleA = angleA
+        self.angleB = angleB
+        self.angleC = angleC
+
+class Square(Triangle):
+    degree1 = 60
+    degree2 = 60
+
+    def __init__(self, degree1, degree2):
+        self.__degree1 = degree1
+        self.__degree2 = degree2
+
+    def getDegrees(self, degree1, degree2):
+        if degree1 + degree2 > 90:
+            return False
+        else:
+            return True
+
+    degrees3 = 90
+    def alwaysarightangle(changeangle, degree1, degree2, degrees3):
+
+        if degrees3 or degree2 or degree1 >= 90:
+            return False
+        else:
+            print("This triangle is obtuse.")
+            return True
+def main():
+    tri1 = Triangle(43, 34, 56)
+    square1 = Square(89,43)
+    print(tri1.angleA)
+    print(square1.alwaysarightangle(90, 45,56))
+    print(square1.getDegrees(90, 45))
+    print(square1.getDegrees(60, 45))
+main()
